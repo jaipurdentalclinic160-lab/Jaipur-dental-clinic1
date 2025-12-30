@@ -21,10 +21,20 @@ a{display:inline-block;margin:10px;padding:10px 15px;background:#25D366;color:#f
 <section>
 <h2>✅ Appointment Confirmed</h2>
 <p>Thank you for booking your appointment with Jaipur Dental Clinic!</p>
-<p>We have received your request and will contact you soon to confirm the timing.</p>
+<p>Your appointment details:</p>
+<p><strong>Date:</strong> <span id="appt-date"></span></p>
+<p><strong>Time:</strong> <span id="appt-time"></span></p>
+<p>We will contact you soon to confirm.</p>
 <a href="index.html">🏠 Back to Home</a>
 <a href="https://wa.me/919602250037?text=Hello%2C%20I%20just%20booked%20an%20appointment" class="green">🟢 WhatsApp Clinic</a>
 </section>
+
+<script>
+// Read URL parameters
+const params = new URLSearchParams(window.location.search);
+document.getElementById('appt-date').textContent = params.get('date') || 'Not provided';
+document.getElementById('appt-time').textContent = params.get('time') || 'Not provided';
+</script>
 
 </body>
 </html>
